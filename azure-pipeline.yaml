@@ -2,11 +2,6 @@ name: 'Hello World'
 pool: 
   vmImage: 'ubuntu-latest'
 
-variables:
-  - name: buildSourceVershionShort
-    value: $[ format('{0}', variables.Build.SourceVersion[0]) ]
-    readonly: true
-
 stages:
 - stage: VariablesOutput
   jobs:
@@ -14,7 +9,7 @@ stages:
     steps:
       - task: Bash@3
         env:
-          BUILD_SOURCE_VERSION: $(buildSourceVershionShort)
+          BUILD_SOURCE_VERSION: $Build.SourceVersion)
         inputs:
           targetType: inline
           script: |
