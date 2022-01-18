@@ -13,4 +13,4 @@ stages:
   - job: Echo
     steps:
     - script: |
-        echo $(buildSourceVershionShort)
+        echo $(buildSourceVershionShort[0])
