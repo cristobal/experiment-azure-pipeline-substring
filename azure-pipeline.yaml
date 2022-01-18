@@ -12,4 +12,6 @@ stages:
   jobs:
   - job: Echo
     steps:
-    - script: echo $(buildSourceVershionShort)
+    - script: |
+        echo $(buildSourceVershionShort)
+        echo $(Build.SourceVersion)
