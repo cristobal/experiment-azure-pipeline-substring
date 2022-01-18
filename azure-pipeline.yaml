@@ -8,7 +8,7 @@ variables:
     readonly: true
 
 stages:
-- stage: 'Variables Output'
+- stage: VariablesOutput
   jobs:
   - job: Echo
     steps:
