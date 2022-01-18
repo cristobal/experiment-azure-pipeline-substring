@@ -2,14 +2,14 @@ name: 'Hello World'
 pool: 
   vmImage: 'ubuntu-latest'
 
-variables:
-  - name: buildSourceVershionShort
-    value: ${{ format('{0}{1}', variables['Build.SourceVersion'][0], variables['Build.SourceVersion'][1])}}
-    readonly: true
+#variables:
+#  - name: buildSourceVershionShort
+#    value: ${{ format('{0}{1}', variables['Build.SourceVersion'][0], variables['Build.SourceVersion'][1])}}
+#    readonly: true
 
 stages:
 - stage: VariablesOutput
   jobs:
   - job: Echo
     steps:
-    - script: echo $[ format('{0}{1}', Build.SourceVersion[0], Build.SourceVersion[1]) ]
+    - script: echo "<"$[ format('{0}{1}', variables['Build.SourceVersion'][0], variables['Build.SourceVersion'][1]) ]">"
