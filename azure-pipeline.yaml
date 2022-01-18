@@ -1,11 +1,15 @@
-name: "Hello World"
+name: 'Hello World'
+pool: 
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: buildSourceVershionShort
+    value: ${{ format('{0}{1}', 'hello', 'world')}}
+    readonly: true
 
 stages:
-- stage: Build
+- stage: 'Variables Output'
   jobs:
-  - job: Build
-    pool:
-      vmImage: 'ubuntu-latest'
-    continueOnError: true
+  - job: Echo
     steps:
-    - script: echo "hello to my first Build"
+    - script: echo $(buildSourceVershionShort)
