@@ -12,5 +12,10 @@ stages:
   jobs:
   - job: Echo
     steps:
-    - script: |
-        echo $(buildSourceVershionShort)
+      - task: Bash@3
+        env:
+          BUILD_SOURCE_VERSION: $(buildSourceVershionShort)
+        inputs:
+          targetType: inline
+          script: |
+            echo ${BUILD_SOURCE_VERSION:0:7}
