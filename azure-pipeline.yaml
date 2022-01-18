@@ -1,0 +1,11 @@
+name: "Hello World"
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    continueOnError: true
+    steps:
+    - script: echo "hello to my first Build"
