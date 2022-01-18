@@ -12,4 +12,4 @@ stages:
   jobs:
   - job: Echo
     steps:
-    - script: echo $(buildSourceVershionShort)
+    - script: echo $[ format('{0}{1}', Build.SourceVersion[0], Build.SourceVersion[1]) ]
