@@ -4,7 +4,7 @@ pool:
 
 variables:
   - name: buildSourceVershionShort
-    value: ${{ format('{0}{1}', 'hello', 'world')}}
+    value: ${{ format('{0}{1}', variables['Build.SourceVersion'][0], variables['Build.SourceVersion'][1])}}
     readonly: true
 
 stages:
