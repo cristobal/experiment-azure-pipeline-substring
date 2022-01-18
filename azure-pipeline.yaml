@@ -9,8 +9,9 @@ stages:
     steps:
       - task: Bash@3
         env:
-          BUILD_SOURCE_VERSION: $Build.SourceVersion)
+          BUILD_SOURCE_VERSION: $(Build.SourceVersion)
         inputs:
           targetType: inline
           script: |
-            echo ${BUILD_SOURCE_VERSION:0:7}
+            echo BUILD_SOURCE_VERSION=$BUILD_SOURCE_VERSION
+            echo BUILD_SOURCE_VERSION_SHORT=${BUILD_SOURCE_VERSION:0:7}
